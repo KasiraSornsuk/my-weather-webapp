@@ -8,7 +8,14 @@
         /* CSS ตรงนี้ */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #111111, #1f2122);
+            
+            /* 1. เปลี่ยนพื้นหลังเป็นรูปภาพจาก Pexels และใส่สีโทนเข้มสำรองไว้ */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.pexels.com/photos/18444084/pexels-photo-18444084.jpeg') no-repeat center center fixed;
+            
+            /* 2. จัดการให้รูปภาพคลุมเต็มหน้าจอพอดี */
+            background-size: cover;
+            
             color: white;
             display: flex;
             justify-content: center;
@@ -16,19 +23,35 @@
             height: 100vh;
             margin: 0;
         }
+        
         .weather-card {
-            background: rgba(255, 255, 255, 0.2);
+            /* 3. ปรับพื้นหลังการ์ดให้ออกโทนมืดเล็กน้อยเพื่อให้ตัวหนังสือสีขาวอ่านง่ายขึ้นบนรูปภาพ */
+            background: rgba(0, 0, 0, 0.45);
             padding: 30px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* รองรับ Safari */
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
         input, button {
             padding: 10px;
             border-radius: 5px;
             border: none;
             margin: 5px;
+        }
+
+        /* เสริมสไตล์ให้ปุ่มเพื่อความสวยงาม */
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -43,8 +66,7 @@
         <p id="description">ท้องฟ้าแจ่มใส</p>
     </div>
 
-    
-      <script src="javaScr.js"></script>
+    <script src="javaScr.js"></script>
     
 </body>
 </html>
